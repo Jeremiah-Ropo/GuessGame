@@ -12,7 +12,8 @@ const rangeGenerator = (start=2) => {
 }
 
 const guessRW = (computerguess, userNumb) => {
-  for (let incre = userNumb; incre <=2; incre++){
+  
+  for (let incre = 1; incre < userNumb; incre++){
     
     if (userNumb <= 2 && userNumb === computerguess){
       console.log(`You guess right ${computerguess} `)
