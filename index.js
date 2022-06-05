@@ -11,15 +11,16 @@ const rangeGenerator = (start=2) => {
   return randomWhole
 }
 
+
 // Function for the guess game.
-const guessRW = (computerGuesser, winning = "yes", range=2) => {
+const guessRW = (computerGuesser, winning = "yes") => {
   try{
     while (winning === "yes") {
-      
       const userNumber = parseFloat(prompt("Enter number within the starting range: "));
+      let rangeComp = [...Array(computerGuesser+1).keys()].length
   
-      if (userNumber > computerGuesser && userNumber > range){
-        return console.log(`${userNumber} out of range ${computerGuesser}`)
+      if (userNumber > computerGuesser && userNumber > rangeComp && rangeComp > computerGuesser){
+        return console.log(`${userNumber} out of range`)
       }
       else if (isNaN(userNumber)){
         return console.log(`${userNumber}, it's a string`)
@@ -39,7 +40,7 @@ const guessRW = (computerGuesser, winning = "yes", range=2) => {
   }
 }
 
-guessRW(rangeGenerator())
+guessRW(rangeGenerator(4))
 // rangeGenerator(5)
 
 
