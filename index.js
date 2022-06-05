@@ -18,8 +18,8 @@ const guessRW = (computerGuesser, winning = "yes") => {
     while (winning === "yes") {
       const userNumber = parseFloat(prompt("Enter number within the starting range: "));
       let rangeComp = [...Array(computerGuesser+1).keys()].length
-  
-      if (userNumber > computerGuesser && userNumber > rangeComp && rangeComp > computerGuesser){
+      console.log(rangeComp)
+      if (userNumber > computerGuesser && userNumber > rangeComp && rangeComp > computerGuesser || userNumber === rangeComp){
         return console.log(`${userNumber} out of range`)
       }
       else if (isNaN(userNumber)){
@@ -40,7 +40,7 @@ const guessRW = (computerGuesser, winning = "yes") => {
   }
 }
 
-guessRW(rangeGenerator(4))
+guessRW(rangeGenerator(5))
 // rangeGenerator(5)
 
 
